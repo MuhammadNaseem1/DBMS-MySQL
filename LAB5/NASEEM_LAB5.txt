@@ -1,0 +1,15 @@
+1. select first_name,last_name,department_id,department_name from employees JOIN departments USING(department_id);
+2. select first_name,last_name,department_id, job_id,department_name,city from employees  JOIN departments  USING(department_id) JOIN locations USING(location_id) where CITY="london";
+3. select first_name,last_name,department_id, job_id,department_name,city,state_province from employees  JOIN departments  USING(department_id) JOIN locations USING(Location_id);
+4. select S1.employee_id,S1.first_name,S1.last_name,S2.Manager_id,S2.first_name,S2.last_name from employees S1, employees S2 where S1.employee_id=S2.Manager_id;
+5. select first_name,last_name,hire_date from employees where hire_date>(select hire_date from employees where last_name="jones");
+6. SELECT department_name,count(first_name) from employees JOIN departments D using(department_id) Group by department_id;
+7. SELECT employees.department_id,employees.manager_id,department_name,last_name,first_name Manager_name from employees JOIN departments USING(Manager_id);
+8. SELECT department_name, e.first_name Manager_name,CITY from employees e JOIN departments USING(manager_id) JOIN locations USING(location_id);
+9. select *  from employees  JOIN job_history USING(EMPLOYEE_ID) where salary>10000;
+10. select first_name,last_name,hire_date,salary from employees INNER JOIN departments USING(manager_id) where DATEDIFF(current_Date,hire_date)>15;
+11. SELECT department_name,AVG(salary),count(first_name) from employees JOIN departments USING(department_id) where  COMMISSION_PCT>0 GROUP BY department_id;
+12. SELECT country_Name,CITY,department_Name from departments INNER JOIN locations USING(location_id) INNER JOIN countries USING(COUNTRY_ID);
+13. SELECT department_name,first_name,last_name from employees INNER JOIN departments USING(Manager_id);
+14. SELECT * FROM jobs JOIN employees USING(JOB_ID) where SALARY>=12000;
+15. SELECT First_Name,Last_Name,Salary from employees INNER JOIN departments USING(department_id) INNER JOIN locations USING(location_id) where CITY="london";

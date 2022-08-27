@@ -1,0 +1,68 @@
+C:\xampp\mysql\bin>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.11-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| hr                 |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+6 rows in set (0.728 sec)
+
+MariaDB [(none)]> USE hr;
+Database changed
+MariaDB [hr]> SELECT First_Name,Last_Name FROM emplyees;
+ERROR 1146 (42S02): Table 'hr.emplyees' doesn't exist
+MariaDB [hr]> SELECT First_Name,Last_Name FROM employees;
+
+MariaDB [hr]> SELECT * FROM employees;
+
+MariaDB [hr]> SELECT DISTINCT FIRST_NAME,LAST_NAME,EMAIL,PHONE_NUMBER,HIRE_DATE,JOB_ID,SALARY,COMMISSION_PCT,MANAGER_ID,DEPARTMENT_ID FROM employees;
+
+MariaDB [hr]> SELECT * FROM employees LIMIT 10;
+
+MariaDB [hr]> SELECT * FROM employees LIMIT 50,10;
+
+QMariaDB [hr]> SELECT MIN(SALARY) FROM employees;
+
+MariaDB [hr]> SELECT EMAIL AS email FROM employees;
+
+MariaDB [hr]> SELECT First_Name FROM employees AS DATA;
+
+MariaDB [hr]> SELECT DISTINCT FIRST_NAME,LAST_NAME,EMAIL,PHONE_NUMBER,HIRE_DATE,JOB_ID,SALARY,COMMISSION_PCT,MANAGER_ID,DEPARTMENT_ID FROM employees;
+
+MariaDB [hr]> SELECT email FROM employees ORDER BY EMAIL DESC;
+
+MariaDB [hr]> SELECT First_Name AS FIRST_NAME , Last_Name AS LAST_NAME FROM employees;
+
+MariaDB [hr]> SELECT DISTINCT FIRST_NAME,LAST_NAME,EMAIL,PHONE_NUMBER,HIRE_DATE,JOB_ID,SALARY,COMMISSION_PCT,MANAGER_ID,DEPARTMENT_ID FROM employees;
+
+MariaDB [hr]> SELECT First_Name, Last_Name from employees;
+MariaDB [hr]> SELECT Employee_ID,First_Name,Last_Name,Salary FROM employees ORDER BY Salary ASC;
+MariaDB [hr]> SELECT sum(Salary) FROM employees;
+MariaDB [hr]> SELECT MIN(Salary),MAX(Salary) FROM employees;
+MariaDB [hr]> SELECT AVG(Salary),COUNT(Employee_ID) FROM employees;
+MariaDB [hr]> SELECT COUNT(Job_Id) FROM employees;
+MariaDB [hr]> SELECT UPPER(First_Name) FROM employees;
+MariaDB [hr]> SELECT * FROM employees LIMIT 10;
+MariaDB [hr]> SELECT * FROM employees LIMIT 2,2;
+MariaDB [hr]> SELECT * FROM employees LIMIT 105,1;
+
+MariaDB [hr]> SELECT sum(Salary) FROM employees;MariaDB [hr]> SELECT sum(Salary) FROM employees;
+
+MariaDB [hr]> SELECT Employee_ID,First_Name,Last_Name,Salary FROM employees ORDER BY Salary ASC;
+
+MariaDB [hr]> SELECT * FROM employees ORDER BY FIRST_NAME DESC;
+
